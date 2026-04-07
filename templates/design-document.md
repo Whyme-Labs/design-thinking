@@ -116,6 +116,9 @@
 ### Prototype
 [Description or link to prototype artifact]
 
+### Iteration History
+<!-- If the prototype was iterated, document each iteration here -->
+
 ### Assumptions List
 | # | Assumption | Risk Level | What Breaks If Wrong |
 |---|-----------|------------|---------------------|
@@ -158,3 +161,6 @@
 ## Decision
 **Status:** [Ship | Iterate to Phase N]
 **Rationale:** [Why this decision was made]
+
+### Next Steps
+[Implementation recommendations from Phase 5 handoff]
