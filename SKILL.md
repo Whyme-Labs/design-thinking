@@ -105,11 +105,11 @@ digraph design_thinking {
 
     Phase5 -> Critic5 -> Ship;
     Ship -> Finalize [label="Ship"];
-    Ship -> Phase0 [label="Loop back to any\nearlier phase", style=dashed];
-    Ship -> Phase1 [style=dashed];
-    Ship -> Phase2 [style=dashed];
-    Ship -> Phase3 [style=dashed];
-    Ship -> Phase4 [style=dashed];
+    Ship -> Phase0 [label="Iterate", style=dashed];
+    Ship -> Phase1 [label="Iterate", style=dashed];
+    Ship -> Phase2 [label="Iterate", style=dashed];
+    Ship -> Phase3 [label="Iterate", style=dashed];
+    Ship -> Phase4 [label="Iterate", style=dashed];
 
     Finalize -> SelfReview -> UserReviews -> WritingPlans;
 }
@@ -125,13 +125,15 @@ This phase establishes the problem space, classifies the challenge, and sets up 
 
 ### Step 1: Understand the Problem
 
-Ask the user 2-3 scoping questions to understand what they are trying to solve. Ask these questions **ONE AT A TIME** — do not batch them. Wait for the user's response before asking the next question. Example scoping questions:
+Ask scoping questions **ONE AT A TIME** — ask one question, wait for the user's response, then decide what to ask next based on their answer. Do not present a list of questions.
 
-- "Who is the primary user or audience for this?"
-- "What is the core problem or opportunity you are trying to address?"
-- "What constraints or requirements do you already know about?"
+Start with: *"What's the problem space? Who is affected?"*
 
-Adapt questions based on the user's initial prompt. If they have already provided substantial context, skip questions they have already answered.
+Based on the response, follow up with one of these (or adapt):
+- *"What do you already know or have tried?"*
+- *"What would success look like?"*
+
+Skip questions the user has already answered in their initial prompt. 2-3 questions total is typical.
 
 ### Step 2: Classify and Scope
 
@@ -546,4 +548,4 @@ The following reference files provide supplementary techniques and frameworks us
 - `reference/empathy-techniques.md` — Empathy research techniques, interview frameworks, and observation methods. Used by persona-interviewer subagents in Phase 1.
 - `reference/ideation-techniques.md` — Creative ideation methods, brainstorming frameworks, and idea generation techniques. Used by creative-lens subagents in Phase 3.
 - `reference/testing-heuristics.md` — Usability testing heuristics, evaluation criteria, and testing protocols. Used by persona-tester subagents in Phase 5.
-- `reference/design-principles-catalog.md` — Catalog of established design principles from industry leaders. Used as inspiration during Phase 2: Define.
+- `reference/dschool-framework.md` — Stanford d.school design thinking methodology overview. Provides foundational context for the entire process.
