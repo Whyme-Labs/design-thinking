@@ -2,6 +2,45 @@
 
 A Claude Code skill that guides users through the Stanford d.school design thinking framework: **Empathize, Define, Ideate, Prototype, Test**.
 
+## Installation
+
+```bash
+claude mcp add design-thinking -- npx @anthropic-ai/claude-code-mcp@latest skill install Whyme-Labs/design-thinking
+```
+
+Or add it manually to your Claude Code settings:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "skill:design-thinking"
+    ]
+  }
+}
+```
+
+## Usage
+
+Once installed, invoke the skill in Claude Code:
+
+```
+/design-thinking
+```
+
+Or simply describe your problem and mention "design thinking":
+
+```
+I want to use design thinking to explore how we can improve our onboarding flow
+```
+
+The skill will guide you through all 6 phases interactively, one step at a time.
+
+## Requirements
+
+- Claude Code with Agent tool support
+- WebSearch access (for the critic's existing solutions research)
+
 ## Architecture
 
 This is a pure markdown orchestrator skill (no code, no Worker). The orchestrator protocol lives in `SKILL.md`, which dispatches subagent prompts from `prompts/` and references techniques from `reference/`.
