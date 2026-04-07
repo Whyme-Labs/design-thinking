@@ -335,7 +335,7 @@ Provide each subagent with:
 - The empathy synthesis summary
 - The content of `reference/ideation-techniques.md` (include the full text inline — do not reference the file path)
 
-Each subagent will generate 5-8 ideas within their lens, with a brief rationale for each.
+Each subagent will address the top 3 HMW questions and generate 3 concepts per question (9 concepts total per lens, 27 across all three lenses).
 
 ### Step 2: Synthesize
 
