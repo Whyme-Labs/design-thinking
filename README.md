@@ -19,7 +19,7 @@ design-thinking/
 │   ├── empathy-techniques.md
 │   ├── ideation-techniques.md
 │   ├── testing-heuristics.md
-│   └── design-principles-catalog.md
+│   └── dschool-framework.md
 └── templates/
     └── design-document.md    # Living document template
 ```
