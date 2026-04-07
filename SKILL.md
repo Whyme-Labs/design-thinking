@@ -103,13 +103,17 @@ digraph design_thinking {
     Approve4 -> Phase5 [label="Yes"];
     Approve4 -> Phase4 [label="No / Revise"];
 
-    Phase5 -> Critic5 -> Ship;
-    Ship -> Finalize [label="Ship"];
-    Ship -> Phase0 [label="Iterate", style=dashed];
-    Ship -> Phase1 [label="Iterate", style=dashed];
-    Ship -> Phase2 [label="Iterate", style=dashed];
-    Ship -> Phase3 [label="Iterate", style=dashed];
-    Ship -> Phase4 [label="Iterate", style=dashed];
+    Phase5 -> Critic5 -> Approve5;
+    Approve5 -> ShipOrIterate [label="Yes"];
+    Approve5 -> Phase5 [label="No / Revise"];
+
+    ShipOrIterate [label="Ship or Iterate?", shape=diamond];
+    ShipOrIterate -> Finalize [label="Ship"];
+    ShipOrIterate -> Phase0 [label="Iterate", style=dashed];
+    ShipOrIterate -> Phase1 [label="Iterate", style=dashed];
+    ShipOrIterate -> Phase2 [label="Iterate", style=dashed];
+    ShipOrIterate -> Phase3 [label="Iterate", style=dashed];
+    ShipOrIterate -> Phase4 [label="Iterate", style=dashed];
 
     Finalize -> SelfReview -> UserReviews -> WritingPlans;
 }
@@ -229,7 +233,7 @@ After all subagents return, synthesize their findings into:
 3. **Riskiest Assumptions** — beliefs about users that have the least evidence
 4. **Empathy Map** — a consolidated Says / Thinks / Does / Feels grid
 
-Present the synthesis to the user. The user may ask follow-up questions to specific personas — if so, re-dispatch the relevant persona-interviewer subagent with the follow-up question appended to the original prompt.
+Present the synthesis to the user. The user may ask follow-up questions to specific personas — if so, re-dispatch the relevant persona-interviewer subagent with the follow-up question appended to the original prompt. After follow-up interviews complete, re-synthesize the affected sections and present the updated synthesis. Do not advance to the Critic Checkpoint until the user confirms they are done with follow-up exploration.
 
 ### Step 3: Critic Checkpoint
 
@@ -342,11 +346,11 @@ After all subagents return, synthesize their ideas:
 3. **Highlight eureka moments** — ideas that are genuinely novel or unexpected
 4. **Propose a shortlist of 3-5** most promising ideas, with a brief case for each
 
-Present the full idea landscape and the shortlist to the user. Ask the user to **select 1-2 ideas** to carry forward into prototyping.
+Present the full idea landscape and the shortlist to the user. Ask the user to **select 1-2 ideas** to carry forward into prototyping. **Wait for the user to confirm their selection before proceeding.**
 
 ### Step 3: Critic Checkpoint
 
-Dispatch the Critic with the idea shortlist and the user's selection. Instruct the critic to:
+After the user has selected their ideas, dispatch the Critic with the idea shortlist and the user's selection. Instruct the critic to:
 - **Poke holes** in each selected idea — what could go wrong? What assumptions are untested?
 - **Competitive analysis** — do any existing products already do this? How is this different?
 - Suggest any modifications to strengthen the selected ideas
@@ -390,9 +394,15 @@ Launch the prototype-builder subagent using the prompt from `prompts/prototype-b
 - The design principles from Phase 2
 - The full persona profiles from Phase 0
 - The problem type and prototype mode
+- The topic slug (used for save paths, e.g., `docs/design-thinking/<topic-slug>/`)
 - Any specific requirements or constraints the user has mentioned
 
-The subagent will produce the prototype artifacts (HTML files, Mermaid diagrams, canvas documents, etc.) and save them alongside the living document.
+The subagent will produce:
+- The prototype artifact (HTML file, Mermaid diagrams, or narrative)
+- A **prototype assumptions list** — what the prototype assumes to be true, ranked by risk
+- **Key testing questions** — 5-7 specific questions for persona testers to evaluate
+
+Save all artifacts alongside the living document.
 
 ### Step 3: Present Prototype
 
@@ -440,6 +450,7 @@ Present the full test roster (original + edge-case personas) to the user and wai
 Launch all persona-tester subagents **in parallel** (one per persona, including edge-case personas) using the prompt from `prompts/persona-tester.md`. Provide each subagent with:
 
 - The full persona profile
+- The Phase 1 interview summary for this persona (so the tester can maintain continuity with their earlier responses)
 - The prototype (or a detailed description of it)
 - The prototype assumptions list from Phase 4
 - The key testing questions from Phase 4
@@ -447,11 +458,13 @@ Launch all persona-tester subagents **in parallel** (one per persona, including 
 - The content of `reference/testing-heuristics.md` (include the full text inline in the subagent prompt — do not reference the file path)
 
 Each subagent will simulate the persona interacting with the prototype and report:
-- What worked well
-- What was confusing or frustrating
-- Whether their core needs are met
-- Suggestions for improvement
-- A satisfaction score (1-5) with explanation
+- First reaction (gut response)
+- Testing question responses
+- Usability feedback (what works, what's confusing, what's missing)
+- Design principle scorecard (PASS / PARTIAL / FAIL per principle)
+- Deal-breakers (if any)
+- Surprises (unexpected uses, workarounds, unintended consequences)
+- Satisfaction score (1-5) with explanation
 
 ### Step 3: Synthesize Test Results
 
@@ -538,7 +551,7 @@ The orchestrator must handle each status appropriately:
 - **DONE** — incorporate output, proceed
 - **DONE_WITH_CONCERNS** — review concerns, incorporate output, surface concerns to user
 - **BLOCKED** — surface blocker to user, resolve before proceeding
-- Critic **CHALLENGE** — present challenge to user, must be resolved before gate approval
+- Critic **CHALLENGE** — present challenge to user, must be resolved before gate approval. Resolution procedure: (1) user provides a response to the challenge, (2) orchestrator incorporates the response into the phase artifacts, (3) re-dispatch the critic with the updated artifacts, (4) if critic returns PASS or CAUTION, proceed; if CHALLENGE again, surface to user again and repeat
 
 ---
 
