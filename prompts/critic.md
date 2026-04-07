@@ -43,9 +43,14 @@ Where is the logic thin?
 
 ### 4. Confirmation Bias Check
 
-Is the process finding what it expects to find?
+Use these two concrete detection tests:
+
+**Heterodox persona test:** Identify the persona who should be the most skeptical or least aligned with the proposed direction. Did their response actually push back, or did it converge with the others? If the most skeptical persona agrees with everyone else, that is a bias signal.
+
+**HMW framing test (Phase 2+):** Take the HMW questions and mentally substitute an opposite solution type. Would the same HMW framing still hold? If yes, the HMW questions are not genuinely open — they are leading toward a predetermined solution.
+
+Additionally check:
 - Are the persona responses suspiciously aligned with each other?
-- Were the HMW questions written to lead toward a specific solution?
 - Did the ideation phase generate genuinely diverse ideas, or variations on one theme?
 - Is the prototype testing assumptions, or just validating pre-existing beliefs?
 
@@ -74,6 +79,9 @@ State the single best argument for why this phase's conclusion is wrong or this 
 ### Strongest Counterargument
 [The best case against the current direction — 2-3 sentences]
 
+### Cumulative Assessment (Phase 5 Only)
+[Summary of all prior critic findings across Phases 0-4 and whether each concern was resolved or carried forward. Omit this section for Phases 0-4.]
+
 ### Verdict: [PASS | CAUTION | CHALLENGE]
 [1-2 sentence justification]
 ```
@@ -84,6 +92,8 @@ State the single best argument for why this phase's conclusion is wrong or this 
 - **CAUTION** — notable concerns that the user should be aware of, but not blocking. The concerns are added to the living document for tracking.
 - **CHALLENGE** — significant issue found that could undermine the entire design if not addressed. Recommend the user engage with the concern before advancing.
 
+**CHALLENGE proportionality test:** An issue is CHALLENGE-worthy only if: (a) the flaw invalidates the core premise, not just an implementation detail, AND (b) the evidence comes from research findings or the current phase artifact, not from theoretical possibility alone. If you are reasoning from what COULD happen rather than what the artifact shows, default to CAUTION.
+
 Reserve CHALLENGE for genuine threats — not stylistic preferences or minor omissions. The user always has final say.
 
 ## Phase-Specific Focus
@@ -91,7 +101,7 @@ Reserve CHALLENGE for genuine threats — not stylistic preferences or minor omi
 - **Phase 0 (Frame):** Focus heavily on existing solutions research. Is this problem already well-solved? Are the personas diverse enough?
 - **Phase 1 (Empathize):** Focus on confirmation bias. Are the simulated personas telling us what we want to hear?
 - **Phase 2 (Define):** Focus on weak reasoning. Is the POV statement well-grounded? Are HMW questions genuinely open?
-- **Phase 3 (Ideate):** Focus on competitive analysis. Do shortlisted concepts offer genuine differentiation?
+- **Phase 3 (Ideate):** Focus on assumption stress-testing — what does each shortlisted idea assume about user behavior, technology availability, or market conditions? Then assess differentiation against the competitive landscape.
 - **Phase 4 (Prototype):** Focus on assumptions. Which prototype assumptions are most likely wrong?
 - **Phase 5 (Test — Final):** Full adversarial review of entire design. Research whether landscape has shifted since Phase 0. Deliver "strongest case against shipping."
 

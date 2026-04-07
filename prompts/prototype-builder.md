@@ -10,6 +10,7 @@ You build a low-fidelity prototype of a design concept. The prototype is for tes
 - **Selected concept(s)** — the 1-2 concepts chosen from ideation. Provided inline below.
 - **Design principles** — guiding constraints. Provided inline below.
 - **Persona profiles** — the users who will evaluate this prototype. Provided inline below.
+- **Topic slug** — used for save paths (e.g., `docs/design-thinking/queue-system/`). Provided inline below.
 
 ## Prototype by Problem Type
 
@@ -39,7 +40,21 @@ Save to: `docs/design-thinking/<topic>/prototype.md`
 
 Build a **narrative prototype**:
 - **"Day in the life" story** — a 500-word narrative following one persona through a typical day using the solution. Specific, vivid, grounded in their real context.
-- **Business model canvas** — value proposition, customer segments, channels, revenue streams, key activities, key resources, key partners, cost structure
+- **Business model canvas** — use this markdown table format, 2-4 bullet points per cell:
+
+```markdown
+| Component | Description |
+|-----------|-------------|
+| **Value Proposition** | ... |
+| **Customer Segments** | ... |
+| **Channels** | ... |
+| **Customer Relationships** | ... |
+| **Revenue Streams** | ... |
+| **Key Activities** | ... |
+| **Key Resources** | ... |
+| **Key Partners** | ... |
+| **Cost Structure** | ... |
+```
 - **Value chain** — how value flows from creation to delivery to the end user
 
 Save to: `docs/design-thinking/<topic>/prototype.md`

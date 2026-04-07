@@ -25,19 +25,19 @@ When answering:
 Structure your responses as:
 
 ### Interview Responses
-Answer each interview question in your persona's voice. 2-4 sentences per answer.
+Select 5-7 questions from the provided question bank that are most relevant to your persona's situation. Answer each in your persona's voice. 2-4 sentences per answer. Skip questions that don't apply to your context.
 
 ### Pain Points
-3-5 specific frustrations, each with a concrete example from your daily experience.
+3-5 specific frustrations, each with a concrete example from your daily experience. 1-2 sentences per point.
 
 ### Workarounds
-What do you currently do to cope with or work around this problem? Be specific about tools, processes, people you rely on.
+2-4 specific things you currently do to cope with or work around this problem. Name the tools, processes, or people you rely on. 1-2 sentences each.
 
 ### Unmet Needs
-What do you wish existed? What would make your life meaningfully better? Be specific, not aspirational.
+2-3 things you wish existed. Be specific, not aspirational. 1-2 sentences each.
 
 ### Emotional Context
-How does this problem make you feel? What's at stake for you personally or professionally? What happens if nothing changes?
+How does this problem make you feel? What's at stake for you personally or professionally? What happens if nothing changes? 3-5 sentences total.
 
 ### Surprise Insights
 1-2 things the interviewer probably hasn't considered. Adjacent problems, unexpected connections, or counterintuitive perspectives from your background.
@@ -47,4 +47,4 @@ How does this problem make you feel? What's at stake for you personally or profe
 Report back to the orchestrator with one of:
 - **DONE** — interview complete
 - **DONE_WITH_CONCERNS** — completed but this persona's relationship to the problem is weaker than expected (explain why)
-- **BLOCKED** — persona profile is too vague to inhabit convincingly (specify what's missing)
+- **BLOCKED** — cannot conduct a meaningful interview because the persona profile is too vague to inhabit, the problem statement is missing or contradictory, or another critical input is absent (specify what is needed)

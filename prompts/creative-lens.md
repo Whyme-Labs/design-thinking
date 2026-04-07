@@ -24,20 +24,26 @@ Look at how **completely different industries and domains** solve analogous prob
 - Gaming → engagement. How do games onboard new players? Apply that to the problem.
 - Nature → systems. How do ant colonies coordinate? Apply that to the problem.
 
+Before generating concepts, identify the top 2 user needs from the empathy summary. Every concept must address at least one of them.
+
 For each HMW question, find 3-5 analogies from different domains and derive a solution concept from each.
 
 ### If `lens_type: "first-principles"`
 
-Strip the problem to its absolute fundamentals. Forget every existing solution.
+Strip the problem to its absolute fundamentals. This lens is **subtractive** — your concepts should remove complexity, eliminate intermediaries, and simplify.
 
 1. What are the physical/logical constraints that cannot be changed?
 2. What are the assumed constraints that are actually just conventions?
-3. If you could only solve ONE aspect of this problem perfectly, which would it be?
-4. What would the solution look like if you designed it today with zero legacy?
+3. What steps, features, or intermediaries could be removed entirely?
+4. What's the simplest possible version that delivers the core value?
 
-For each HMW question, decompose to fundamentals and rebuild from there. Challenge every assumption.
+Before generating concepts, identify the top 2 user needs from the empathy summary. Every concept must address at least one of them.
+
+For each HMW question, decompose to fundamentals and rebuild with less, not more. The best first-principles concept is one that solves the problem by removing something everyone assumed was necessary.
 
 ### If `lens_type: "10x-radical"`
+
+This lens is **additive** — your concepts should be maximally ambitious, adding scale, ambition, and transformative capability.
 
 Money is unlimited. Time is unlimited. Technology is unlimited. What's the most ambitious, audacious, boundary-pushing solution?
 
@@ -48,11 +54,13 @@ Then work backwards — what's the kernel of that 10x idea that could work at 1x
 - What if it could scale to a billion users overnight?
 - What would a solution look like that makes the problem impossible to have?
 
+Before generating concepts, identify the top 2 user needs from the empathy summary. Every concept must address at least one of them.
+
 For each HMW question, go maximally ambitious first, then extract the realistic core.
 
 ## Output Format
 
-For each HMW question addressed (focus on the top 2-3 most impactful):
+Address the **top 3** HMW questions. Generate **3 concepts per question** (9 concepts total per lens).
 
 ```markdown
 ### HMW: [question text]
@@ -61,7 +69,7 @@ For each HMW question addressed (focus on the top 2-3 most impactful):
 - **How it works:** [2-3 sentences]
 - **Design principles served:** [which principles from the input this addresses]
 - **Biggest risk:** [1 sentence — what could make this fail]
-- **Inspiration:** [for analogous: the source domain. For first-principles: the assumption challenged. For 10x: the ambitious version it's derived from]
+- **Inspiration:** [for analogous: the source domain. For first-principles: the assumption challenged AND the unchallengeable constraint built on. For 10x: the ambitious version it's derived from]
 
 **Concept 2: [one-liner name]**
 ...
@@ -69,11 +77,11 @@ For each HMW question addressed (focus on the top 2-3 most impactful):
 
 ## Rules
 
-- Produce **3-5 concepts per HMW question** — quantity matters in divergent thinking
+- Produce **3 concepts per HMW question** across the **top 3 HMW questions** (9 total)
 - Do NOT self-censor — wild ideas are valuable even if impractical
 - Do NOT converge or recommend — that's the orchestrator's job
-- Each concept must be **genuinely different**, not variations on one theme
-- Reference the empathy data — concepts should address real user needs, not hypothetical ones
+- Each concept must be **genuinely different**, not variations on one theme. After generating all concepts for a HMW question, list the primary mechanism of each in one word (e.g., "social proof," "automation," "physical artifact"). If any two share the same mechanism, replace the duplicate.
+- Reference the empathy data — every concept must trace back to a real user need from the empathy summary
 
 ## Status Protocol
 
