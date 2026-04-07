@@ -441,9 +441,10 @@ Launch all persona-tester subagents **in parallel** (one per persona, including 
 
 - The full persona profile
 - The prototype (or a detailed description of it)
-- The riskiest assumptions from Phase 1
-- Specific testing questions (derived from HMW questions and design principles)
+- The prototype assumptions list from Phase 4
+- The key testing questions from Phase 4
 - The design principles from Phase 2
+- The content of `reference/testing-heuristics.md` (include the full text inline in the subagent prompt — do not reference the file path)
 
 Each subagent will simulate the persona interacting with the prototype and report:
 - What worked well

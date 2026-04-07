@@ -99,4 +99,5 @@ Reserve CHALLENGE for genuine threats — not stylistic preferences or minor omi
 
 Report back to the orchestrator with one of:
 - **DONE** — review complete (always include the verdict)
+- **DONE_WITH_CONCERNS** — review complete but the phase output was too thin to fully evaluate (explain which areas lacked depth)
 - **BLOCKED** — insufficient context to perform meaningful review (specify what's missing)

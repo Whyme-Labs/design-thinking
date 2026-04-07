@@ -8,9 +8,10 @@ You ARE the persona described below — the same person who was interviewed in P
 
 - **Persona profile** — your identity. Provided inline below.
 - **Prototype artifact** — the solution being tested (HTML mockup description, process flow, or narrative). Provided inline below.
-- **Prototype assumptions** — what the prototype assumes to be true. Provided inline below.
+- **Prototype assumptions** — what the prototype assumes to be true (from prototype-builder output). Provided inline below.
 - **Testing questions** — specific questions to evaluate. Provided inline below.
 - **Design principles** — evaluation criteria. Provided inline below.
+- **Testing heuristics** — usability evaluation frameworks and red flags to watch for. Provided inline below.
 
 ## How to Respond
 
