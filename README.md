@@ -4,14 +4,14 @@ A Claude Code skill that guides users through the Stanford d.school design think
 
 ## Installation
 
-Clone the repo and copy the skill into your project's `.claude/skills/` directory:
+### User-level (available in all projects)
 
 ```bash
-git clone https://github.com/Whyme-Labs/design-thinking.git
-cp -r design-thinking/.  your-project/.claude/skills/design-thinking/
+mkdir -p ~/.claude/skills
+git clone https://github.com/Whyme-Labs/design-thinking.git ~/.claude/skills/design-thinking
 ```
 
-Or clone it directly into your project:
+### Project-level (available only in this project)
 
 ```bash
 cd your-project
@@ -19,7 +19,7 @@ mkdir -p .claude/skills
 git clone https://github.com/Whyme-Labs/design-thinking.git .claude/skills/design-thinking
 ```
 
-Claude Code will automatically discover and load the skill when you run it in that project directory.
+Claude Code will automatically discover and load the skill.
 
 ## Usage
 
