@@ -4,31 +4,26 @@ A Claude Code skill that guides users through the Stanford d.school design think
 
 ## Installation
 
+Clone the repo and copy the skill into your project's `.claude/skills/` directory:
+
 ```bash
-claude mcp add design-thinking -- npx @anthropic-ai/claude-code-mcp@latest skill install Whyme-Labs/design-thinking
+git clone https://github.com/Whyme-Labs/design-thinking.git
+cp -r design-thinking/.  your-project/.claude/skills/design-thinking/
 ```
 
-Or add it manually to your Claude Code settings:
+Or clone it directly into your project:
 
-```json
-{
-  "permissions": {
-    "allow": [
-      "skill:design-thinking"
-    ]
-  }
-}
+```bash
+cd your-project
+mkdir -p .claude/skills
+git clone https://github.com/Whyme-Labs/design-thinking.git .claude/skills/design-thinking
 ```
+
+Claude Code will automatically discover and load the skill when you run it in that project directory.
 
 ## Usage
 
-Once installed, invoke the skill in Claude Code:
-
-```
-/design-thinking
-```
-
-Or simply describe your problem and mention "design thinking":
+Simply describe your problem and the skill will be invoked:
 
 ```
 I want to use design thinking to explore how we can improve our onboarding flow
