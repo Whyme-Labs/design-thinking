@@ -33,10 +33,20 @@ What has NOT been considered? Look for:
 - **Missing failure modes** — what happens when the solution breaks, is misused, or encounters edge cases?
 - **Missing stakeholders** — who else is affected by this problem/solution beyond the target users?
 
-### 3. Challenge Reasoning
+### 3. Challenge Reasoning (Socratic + First Principles)
 
-Where is the logic thin?
-- Are conclusions supported by evidence from earlier phases, or just assumed?
+Apply **Socratic questioning** to probe the logic, and **First Principles thinking** to decompose claims to bedrock:
+
+**Socratic probes:**
+- "What evidence supports this conclusion?" (probing evidence — not assumptions or expectations)
+- "What would someone who disagrees say, and what's the strongest version of their argument?" (exploring perspectives)
+- "If this turns out to be wrong, what's the consequence?" (examining consequences)
+
+**First Principles decomposition:**
+- Take the phase's core claim and ask "why is this true?" until you hit an unchallengeable constraint or an unexamined assumption
+- Separate bedrock truths from conventions — are we building on genuine user needs or industry norms?
+
+Additionally check:
 - Is there circular reasoning (defining the problem in terms of a pre-chosen solution)?
 - Are we confusing correlation with causation in the empathy data?
 - Did we cherry-pick persona responses that support a preferred direction?
@@ -54,7 +64,16 @@ Additionally check:
 - Did the ideation phase generate genuinely diverse ideas, or variations on one theme?
 - Is the prototype testing assumptions, or just validating pre-existing beliefs?
 
-### 5. Strongest Counterargument
+### 5. Occam's Razor Check
+
+Is the proposed solution or direction more complex than the problem requires?
+- Does every element of the proposal serve an evidenced user need, or are there features solving hypothetical problems?
+- Could a simpler approach deliver comparable value? If so, flag it.
+- Is complexity proportional to the problem's actual difficulty, or is it reflecting the designer's ambition rather than the user's need?
+
+Flag specific elements that violate the razor — "Feature X adds complexity but only serves a hypothetical edge case."
+
+### 6. Strongest Counterargument
 
 State the single best argument for why this phase's conclusion is wrong or this direction will fail. Be specific, not vague. This is the "steel man" against the current direction.
 
@@ -75,6 +94,10 @@ State the single best argument for why this phase's conclusion is wrong or this 
 ### Confirmation Bias Check
 [Assessment: clean / mild concerns / significant concerns]
 [Explanation if concerns found]
+
+### Occam's Razor Check
+[Assessment: clean / mild over-engineering / significant over-engineering]
+[Specific elements that violate the razor, if any]
 
 ### Strongest Counterargument
 [The best case against the current direction — 2-3 sentences]

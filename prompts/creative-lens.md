@@ -32,14 +32,17 @@ For each HMW question, find 3-5 analogies from different domains and derive a so
 
 Strip the problem to its absolute fundamentals. This lens is **subtractive** — your concepts should remove complexity, eliminate intermediaries, and simplify.
 
-1. What are the physical/logical constraints that cannot be changed?
-2. What are the assumed constraints that are actually just conventions?
-3. What steps, features, or intermediaries could be removed entirely?
-4. What's the simplest possible version that delivers the core value?
+**Decomposition method:**
+1. **List the conventional wisdom** — write down 5-7 things "everyone knows" about how this problem is solved today
+2. **Challenge each one:** Is this a bedrock constraint (physics, logic, hard requirement) or a convention (industry norm, historical accident, competitor imitation)?
+3. **Keep only bedrock** — discard everything that is convention
+4. **Rebuild from bedrock alone** — what is the simplest, most direct path from the unchallengeable constraints to the user's core need?
+
+**Apply Occam's Razor as a generative principle:** The best first-principles concept is one that solves the problem by *removing* something everyone assumed was necessary. If your concept adds a new mechanism, ask: "Does this earn its complexity? Could the same value be delivered with less?"
 
 Before generating concepts, identify the top 2 user needs from the empathy summary. Every concept must address at least one of them.
 
-For each HMW question, decompose to fundamentals and rebuild with less, not more. The best first-principles concept is one that solves the problem by removing something everyone assumed was necessary.
+For each HMW question, explicitly state: (a) the convention being challenged, (b) the bedrock constraint it's built on, (c) the concept that emerges from rebuilding.
 
 ### If `lens_type: "10x-radical"`
 

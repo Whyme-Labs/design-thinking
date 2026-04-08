@@ -64,6 +64,7 @@ design-thinking/
 │   ├── prototype-builder.md  # Builds low-fidelity prototypes (Phase 4)
 │   └── persona-tester.md     # Simulates usability testing (Phase 5)
 ├── reference/                # Technique reference files for subagents
+│   ├── thinking-frameworks.md # First Principles, Socratic Questioning, Occam's Razor
 │   ├── empathy-techniques.md
 │   ├── ideation-techniques.md
 │   ├── testing-heuristics.md
@@ -83,10 +84,19 @@ design-thinking/
 | 4 | Prototype | Low-fidelity prototype (HTML, Mermaid, or narrative) |
 | 5 | Test | Persona usability testing, final adversarial review, handoff |
 
+## Thinking Frameworks
+
+Three cross-cutting reasoning frameworks are woven throughout all phases:
+
+- **First Principles Thinking** -- decompose problems and assumptions to fundamental truths, strip away conventions, rebuild from bedrock constraints
+- **Socratic Questioning** -- structured probing at every user gate and in the critic subagent to surface hidden assumptions and deepen understanding
+- **Occam's Razor** -- prefer the simplest solution that serves evidenced needs; complexity must justify itself
+
 ## Key Design Decisions
 
 - **User gates between every phase** -- no auto-advancing
 - **Critic subagent runs in every phase** -- adversarial review is not optional
+- **Cross-cutting thinking frameworks** -- First Principles, Socratic Questioning, and Occam's Razor applied throughout
 - **Non-linear loopback** from Phase 5 to any earlier phase, preserving all artifacts
 - **Hard gate on implementation** -- no code until Phase 5 is approved
 - **Living document** as single source of truth, updated after every phase

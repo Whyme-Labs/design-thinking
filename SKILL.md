@@ -132,15 +132,18 @@ This phase establishes the problem space, classifies the challenge, and sets up 
 
 ### Step 1: Understand the Problem
 
-Ask scoping questions **ONE AT A TIME** — ask one question, wait for the user's response, then decide what to ask next based on their answer. Do not present a list of questions.
+Ask scoping questions **ONE AT A TIME** using **Socratic questioning** (see `reference/thinking-frameworks.md` Section 2). Do not present a list of questions. Each question should probe assumptions, not just gather information.
 
 Start with: *"What's the problem space? Who is affected?"*
 
-Based on the response, follow up with one of these (or adapt):
-- *"What do you already know or have tried?"*
-- *"What would success look like?"*
+Based on the response, follow up with probing questions — not just informational ones:
+- *"Why is this a problem now — what changed?"* (probing assumptions)
+- *"What have you tried, and why didn't it work?"* (probing evidence)
+- *"What would success look like — and how would you know you'd achieved it?"* (examining consequences)
 
-Skip questions the user has already answered in their initial prompt. 2-3 questions total is typical.
+Follow the thread — let each answer shape the next question. Skip questions the user has already answered in their initial prompt. 2-3 questions total is typical.
+
+After scoping, apply **First Principles decomposition** (see `reference/thinking-frameworks.md` Section 1): Is the stated problem the real problem, or a symptom of a deeper one? State the assumed problem, ask "why is this true?" until you hit bedrock, and present the decomposition to the user.
 
 ### Step 2: Classify and Scope
 
@@ -203,7 +206,7 @@ The critic will return one of: **PASS**, **CAUTION**, or **CHALLENGE**.
 
 ### Wait for User Approval
 
-Present a summary of Phase 0 outputs and ask: "Ready to move to Phase 1: Empathize? Or would you like to revise anything?"
+Present a summary of Phase 0 outputs. Before asking to proceed, apply **Socratic probing** at the gate: "What are you least confident about in how we've framed this? Is there an assumption here that feels shaky?" Then ask: "Ready to move to Phase 1: Empathize? Or would you like to revise anything?"
 
 ---
 
@@ -254,7 +257,7 @@ Append to the living document:
 
 ### Wait for User Approval
 
-Present the empathy findings and ask: "Ready to move to Phase 2: Define? Or would you like to explore any persona's perspective further?"
+Present the empathy findings. Apply **Socratic probing** at the gate: "Which of these findings surprised you? Is there anything the personas said that you're not sure you believe?" Then ask: "Ready to move to Phase 2: Define? Or would you like to explore any persona's perspective further?"
 
 ---
 
@@ -266,6 +269,8 @@ This phase converges the empathy findings into a clear problem definition.
 
 ### Step 1: POV Statement
 
+Before crafting the POV, apply **First Principles thinking** (see `reference/thinking-frameworks.md` Section 1): review the empathy findings and strip away conventional framings. What is the bedrock user need, separate from how existing solutions frame it?
+
 Craft a Point of View statement in the d.school format:
 
 > **[User]** needs **[need]** because **[insight]**.
@@ -273,6 +278,8 @@ Craft a Point of View statement in the d.school format:
 Propose 2-3 variations of the POV statement, each emphasizing a different facet of the problem. Explain the trade-offs between them. Ask the user to select or refine one as the primary POV.
 
 ### Step 2: How Might We (HMW) Questions
+
+Apply **Occam's Razor** (see `reference/thinking-frameworks.md` Section 3) when generating HMW questions: could fewer, simpler questions cover the same ground? If two HMW questions overlap substantially, collapse them. Over-specified questions constrain ideation.
 
 Generate 5-7 "How Might We" questions derived from the POV statement and empathy findings. Rank them by potential impact (high / medium / low). Example format:
 
@@ -313,7 +320,7 @@ Append to the living document:
 
 ### Wait for User Approval
 
-Present the Define outputs and ask: "Ready to move to Phase 3: Ideate? Or would you like to refine the problem definition?"
+Present the Define outputs. Apply **Socratic probing** at the gate: "If you had to argue against this problem definition, what would you say? What's the weakest link?" Then ask: "Ready to move to Phase 3: Ideate? Or would you like to refine the problem definition?"
 
 ---
 
@@ -349,6 +356,8 @@ After all subagents return, synthesize their ideas:
 3. **Highlight eureka moments** — ideas that are genuinely novel or unexpected
 4. **Propose a shortlist of 3-5** most promising ideas, with a brief case for each
 
+Apply **Occam's Razor** (see `reference/thinking-frameworks.md` Section 3) as a shortlisting filter: when two ideas solve the same need comparably, prefer the one with fewer moving parts. Flag ideas whose complexity is disproportionate to the problem they solve.
+
 Present the full idea landscape and the shortlist to the user. Ask the user to **select 1-2 ideas** to carry forward into prototyping. **Wait for the user to confirm their selection before proceeding.**
 
 ### Step 3: Critic Checkpoint
@@ -369,7 +378,7 @@ Append to the living document:
 
 ### Wait for User Approval
 
-Present the selected ideas with critic feedback and ask: "Ready to move to Phase 4: Prototype? Or would you like to iterate on the ideas?"
+Present the selected ideas with critic feedback. Apply **Socratic probing** at the gate: "What's the biggest assumption baked into the idea you selected? What would have to be true for it to work?" Then ask: "Ready to move to Phase 4: Prototype? Or would you like to iterate on the ideas?"
 
 ---
 
@@ -409,6 +418,8 @@ Save all artifacts alongside the living document.
 
 ### Step 3: Present Prototype
 
+Before presenting, apply **Occam's Razor** (see `reference/thinking-frameworks.md` Section 3): audit the prototype for unnecessary complexity. Every element must trace to an evidenced user need from Phase 1. If a feature only serves a hypothetical need, cut it.
+
 Present the prototype to the user. Explain what it demonstrates and what it intentionally leaves out (it is low-fidelity — set expectations).
 
 The user may request iterations on the prototype. If so, re-dispatch the prototype-builder with the user's feedback appended to the original prompt. Iterate until the user is satisfied or chooses to proceed.
@@ -432,7 +443,7 @@ Append to the living document:
 
 ### Wait for User Approval
 
-Present the prototype with critic feedback and ask: "Ready to move to Phase 5: Test? Or would you like to iterate on the prototype?"
+Present the prototype with critic feedback. Apply **Socratic probing** at the gate: "If a user saw this for the first time with no explanation, what would confuse them? What feels over-built or under-built?" Then ask: "Ready to move to Phase 5: Test? Or would you like to iterate on the prototype?"
 
 ---
 
@@ -562,6 +573,7 @@ The orchestrator must handle each status appropriately:
 
 The following reference files provide supplementary techniques and frameworks used by subagents:
 
+- `reference/thinking-frameworks.md` — Cross-cutting reasoning frameworks (First Principles, Socratic Questioning, Occam's Razor) applied throughout all phases. Used by the orchestrator at phase transitions and user gates, and by the Critic subagent for structured challenge.
 - `reference/empathy-techniques.md` — Empathy research techniques, interview frameworks, and observation methods. Used by persona-interviewer subagents in Phase 1.
 - `reference/ideation-techniques.md` — Creative ideation methods, brainstorming frameworks, and idea generation techniques. Used by creative-lens subagents in Phase 3.
 - `reference/testing-heuristics.md` — Usability testing heuristics, evaluation criteria, and testing protocols. Used by persona-tester subagents in Phase 5.
