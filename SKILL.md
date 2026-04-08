@@ -5,7 +5,10 @@ description: >
   Empathize → Define → Ideate → Prototype → Test with simulated
   user personas and parallel creative subagents. Use when tackling
   product design, system design, or business strategy problems.
-version: 1.0.0
+license: MIT
+metadata:
+  author: sohweimeng
+  version: "1.0.0"
 ---
 
 # Design Thinking

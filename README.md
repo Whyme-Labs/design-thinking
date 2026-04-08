@@ -4,14 +4,28 @@ A Claude Code skill that guides users through the Stanford d.school design think
 
 ## Installation
 
-### User-level (available in all projects)
+### npx (recommended)
+
+```bash
+npx skills add Whyme-Labs/design-thinking
+```
+
+Or install globally (available in all projects):
+
+```bash
+npx skills add -g Whyme-Labs/design-thinking
+```
+
+### Manual (git clone)
+
+**User-level** (available in all projects):
 
 ```bash
 mkdir -p ~/.claude/skills
 git clone https://github.com/Whyme-Labs/design-thinking.git ~/.claude/skills/design-thinking
 ```
 
-### Project-level (available only in this project)
+**Project-level** (available only in this project):
 
 ```bash
 cd your-project
